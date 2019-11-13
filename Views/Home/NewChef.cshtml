@@ -1,0 +1,35 @@
+@model Chef
+
+<div class="row align-items-end mt-4">
+  <div class="col offset-md-4">
+    <h1>Add a Chef!</h1>
+  </div>
+  <div class="col align-self-center text-center">
+    <a href="/">Home</a>
+  </div>
+</div>
+
+<form asp-action="CreateNewChef" asp-controller="Home" method="post">
+  <div class="row mt-5">
+    <div class="col-8 offset-md-1">
+      <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input asp-for="FirstName" class="form-control">
+        <span class="text-danger" asp-validation-for="FirstName"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" class="form-control">
+        <span class="text-danger" asp-validation-for="LastName"></span>
+      </div>
+      <div class="form-group">
+        <label asp-for="DateOfBirth">Date of Birth</label>
+        <input asp-for="DateOfBirth" class="form-control" >
+        <span class="text-danger" asp-validation-for="DateOfBirth"></span>
+      </div>
+      <div class="text-center mt-5">
+        <button class="btn btn-primary" type="submit">Add Chef</button>
+      </div>
+    </div>
+</form>
+

@@ -1,0 +1,40 @@
+
+
+<div class="row mt-4">
+  <div class="col offset-md-4">
+    <h2><a href="/">Chefs</a> | <span>Dishes</span></h2>
+  </div>
+  <div class="col align-self-center text-center">
+    <a href="dishes/new">Add a Dish</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col mt-5 mb-2">
+    <h3>Yum, take a look at our tasty dishes!</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-10">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Dish Name</th>
+          <th scope="col">Chef</th>
+          <th scope="col">Tastiness</th>
+          <th scope="col">Calories</th>
+        </tr>
+      </thead>
+      <tbody>
+          @for(int i = Model.Count-1; i >= 0; i--)
+          {
+            <tr>
+                <td>@Model[i].DishName</td>
+                <td>@Model[i].Creator.FirstName @Model[i].Creator.LastName</td>
+                <td>@Model[i].Tastiness</td>
+                <td>@Model[i].Calories</td>
+              </tr>
+          }
+      </tbody>
+    </table>
+  </div>
+</div>
